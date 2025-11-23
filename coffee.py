@@ -10,7 +10,7 @@ class Coffee:
     def __repr__(self):
         return f"<Coffee name={self.name!r}>"
 
-    # name property with validation
+    
     @property
     def name(self):
         return self._name
@@ -24,7 +24,7 @@ class Coffee:
             raise ValueError("Coffee name must be at least 3 characters")
         self._name = value
 
-    # relationship methods
+    
     def orders(self):
         from order import Order
         return [o for o in Order.all if o.coffee is self]
@@ -32,7 +32,7 @@ class Coffee:
     def customers(self):
         return list({o.customer for o in self.orders()})
 
-    # aggregate/association methods
+    
     def num_orders(self):
         return len(self.orders())
 

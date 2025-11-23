@@ -11,7 +11,7 @@ class Order:
     all = []
 
     def __init__(self, customer, coffee, price):
-        # validate types
+        
         from customer import Customer
         from coffee import Coffee
 
@@ -19,7 +19,7 @@ class Order:
             raise TypeError("Order.customer must be a Customer instance")
         if not isinstance(coffee, Coffee):
             raise TypeError("Order.coffee must be a Coffee instance")
-        # price validation (allow ints and floats)
+        
         if not (isinstance(price, (int, float))):
             raise TypeError("Order.price must be a number")
         price = float(price)
@@ -35,7 +35,7 @@ class Order:
     def __repr__(self):
         return f"<Order customer={self.customer.name!r} coffee={self.coffee.name!r} price={self.price}>"
 
-    # properties
+    
     @property
     def customer(self):
         return self._customer

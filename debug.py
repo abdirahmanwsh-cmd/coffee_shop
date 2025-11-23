@@ -1,4 +1,4 @@
-# Simple interactive debug script. Run this file to try the domain model.
+
 
 
 if __name__ == "__main__":
@@ -7,21 +7,18 @@ from coffee import Coffee
 from order import Order
 
 
-# reset any previous orders (useful if you import multiple times)
 Order.all.clear()
 
-
-# create customers
 alice = Customer("Alice")
 bob = Customer("Bob")
 
 
-# create coffees
+
 latte = Coffee("Latte")
 espresso = Coffee("Espresso")
 
 
-# create orders
+
 alice.create_order(latte, 4.5)
 alice.create_order(espresso, 3.0)
 bob.create_order(latte, 7.0)
